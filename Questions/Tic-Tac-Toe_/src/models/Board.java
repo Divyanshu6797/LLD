@@ -12,6 +12,7 @@ public class Board {
     public PlayingPiece[][] board;
 
     public  Board(int size) {
+        this.size = size;
         board = new PlayingPiece[size][size];
     }
 
@@ -26,7 +27,7 @@ public class Board {
 
         for(int i = 0; i<size; i++) {
             for(int j = 0; j<size; j++) {
-                if(board[i][j] != null) {
+                if(board[i][j] == null) {
                     Pair newPair = new Pair(i,j);
                     freeCells.add(newPair);
                 }
@@ -39,12 +40,13 @@ public class Board {
         for(int i = 0; i < size; i++) {
             for(int j = 0;j <size; j++) {
                 if(board[i][j] != null) {
-                    System.out.print(board[i][j].pieceType.name() + "    ");
+                    System.out.print("| " + board[i][j].pieceType.name() + "  |" );
                 } else {
-                    System.out.print("     ");
+                    System.out.print("|    |");
                 }
 
             }
+            System.out.println();
         }
     }
 
