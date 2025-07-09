@@ -17,6 +17,7 @@ public class Board {
     }
 
     public boolean addPiece(int row, int column, PlayingPiece playingPiece) {
+        if(row >= size || column >= size) return false;
         if(board[row][column] != null) return false;
         board[row][column] = playingPiece;
         return true;

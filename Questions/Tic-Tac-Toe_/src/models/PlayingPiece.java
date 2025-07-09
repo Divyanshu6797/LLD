@@ -2,7 +2,7 @@ package models;
 
 public class PlayingPiece {
 
-    PieceType pieceType;
+    public PieceType pieceType;
     public PlayingPiece(PieceType pieceType) {
         this.pieceType = pieceType;
 
